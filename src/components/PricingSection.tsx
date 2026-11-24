@@ -51,7 +51,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onRequestPilot }
               </div>
 
               <div className="py-6">
-                <div className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tight font-sans">
+                <div className="text-2xl sm:text-3xl font-extrabold text-navy tracking-[-0.03em] font-heading">
                   {plan.price}
                 </div>
                 <p className="text-xs text-content-secondary mt-3 leading-relaxed">

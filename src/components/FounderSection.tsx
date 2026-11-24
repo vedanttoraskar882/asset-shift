@@ -73,7 +73,7 @@ export const FounderSection: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-[-0.03em] font-heading">
                 Odinakachi Maduabuchukwu
               </h3>
               <p className="text-base font-semibold text-content-secondary mt-1">

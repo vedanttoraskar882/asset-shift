@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestPilot }) => {
             className="flex items-baseline gap-2 group focus:outline-none focus:ring-2 focus:ring-gold rounded-lg py-1 px-1.5"
             aria-label="AssetShift Home"
           >
-            <span className="text-2xl font-extrabold tracking-tight text-white font-sans">
+            <span className="text-2xl font-extrabold tracking-[-0.03em] text-white font-heading">
               Asset<span className="text-gold">Shift</span>
             </span>
             <span className="text-[10px] tracking-widest text-slate-400 uppercase font-medium hidden sm:inline-block">

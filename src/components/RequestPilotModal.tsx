@@ -149,7 +149,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
               <ShieldCheck className="w-3.5 h-3.5" />
               Pilot Programme Registration
             </div>
-            <h2 id="modal-title" className="text-2xl font-bold text-navy">
+            <h2 id="modal-title" className="text-2xl font-extrabold text-navy font-heading tracking-tight">
               Request a Pilot
             </h2>
             <p className="text-sm text-content-secondary mt-1">
@@ -210,7 +210,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
 
               {/* Full Name */}
               <div>
-                <label htmlFor="fullName" className="block text-xs font-semibold text-content-primary uppercase tracking-wider mb-1.5">
+                <label htmlFor="fullName" className="block text-xs font-semibold text-slate-700 tracking-normal mb-1.5">
                   Full Name <span className="text-status-danger">*</span>
                 </label>
                 <div className="relative">
@@ -243,7 +243,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
 
               {/* Phone Number */}
               <div>
-                <label htmlFor="phoneNumber" className="block text-xs font-semibold text-content-primary uppercase tracking-wider mb-1.5">
+                <label htmlFor="phoneNumber" className="block text-xs font-semibold text-slate-700 tracking-normal mb-1.5">
                   Phone Number <span className="text-status-danger">*</span>
                 </label>
                 <div className="relative">
@@ -275,7 +275,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
 
               {/* Email Address */}
               <div>
-                <label htmlFor="emailAddress" className="block text-xs font-semibold text-content-primary uppercase tracking-wider mb-1.5">
+                <label htmlFor="emailAddress" className="block text-xs font-semibold text-slate-700 tracking-normal mb-1.5">
                   Business Email Address <span className="text-status-danger">*</span>
                 </label>
                 <div className="relative">
@@ -307,7 +307,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
 
               {/* Organisation Name */}
               <div>
-                <label htmlFor="organisationName" className="block text-xs font-semibold text-content-primary uppercase tracking-wider mb-1.5">
+                <label htmlFor="organisationName" className="block text-xs font-semibold text-slate-700 tracking-normal mb-1.5">
                   Organisation Name <span className="text-status-danger">*</span>
                 </label>
                 <div className="relative">

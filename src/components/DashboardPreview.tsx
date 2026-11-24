@@ -143,7 +143,7 @@ export const DashboardPreview: React.FC = () => {
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                     {metric.label}
                   </p>
-                  <p className="text-2xl font-extrabold text-navy mt-1">
+                  <p className="text-2xl font-extrabold text-navy mt-1 font-heading tracking-[-0.03em]">
                     {metric.value}
                   </p>
                   <p className="text-[10px] text-slate-400 mt-0.5">
