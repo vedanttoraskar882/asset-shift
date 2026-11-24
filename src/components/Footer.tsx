@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Column 1: Brand & Summary (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-baseline gap-2 text-white">
-              <span className="text-2xl font-extrabold tracking-tight text-white font-sans">
+              <span className="text-2xl font-extrabold tracking-[-0.03em] text-white font-heading">
                 Asset<span className="text-gold">Shift</span>
               </span>
               <span className="text-[10px] tracking-widest text-slate-400 uppercase font-medium">
@@ -66,12 +66,6 @@ export const Footer: React.FC<FooterProps> = ({
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               A proposed software assurance platform designed to help UK electricity organisations identify incomplete meter lifecycle obligations and address avoidable financial exposure.
             </p>
-
-            <div className="pt-2">
-              <span className="inline-block px-3 py-1 text-[11px] font-medium text-slate-300 bg-white/5 border border-white/10 rounded-full">
-                Currently in development and market validation.
-              </span>
-            </div>
           </div>
 
           {/* Column 2: Quick Links (lg:col-span-2) */}
