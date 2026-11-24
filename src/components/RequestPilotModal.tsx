@@ -11,7 +11,6 @@ interface RequestPilotModalProps {
 export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
   isOpen,
   onClose,
-  initialContext
 }) => {
   const [formData, setFormData] = useState<PilotFormData>({
     fullName: '',
@@ -86,7 +85,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
     const validationErrors = validatePilotForm(formData);
 
     if (!acknowledged) {
-      validationErrors.acknowledgement = 'You must confirm the demonstration and local data storage acknowledgement.';
+      validationErrors.acknowledgement = 'Please confirm your agreement to be contacted regarding the pilot programme.';
     }
 
     if (Object.keys(validationErrors).length > 0) {
@@ -98,7 +97,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
     setSystemError(null);
 
     try {
-      // Save strictly to browser localStorage using the specification function
+      // Save strictly using the storage utility
       savePilotSubmission(formData);
 
       // Successfully saved
@@ -113,9 +112,9 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
       setErrors({});
     } catch (err: unknown) {
       if (err instanceof Error) {
-        setSystemError(err.message || 'Your details could not be saved. Please check your browser storage settings and try again.');
+        setSystemError(err.message || 'Your request could not be processed. Please verify your input and try again.');
       } else {
-        setSystemError('Your details could not be saved. Please check your browser storage settings and try again.');
+        setSystemError('Your request could not be processed. Please verify your input and try again.');
       }
     } finally {
       setIsSubmitting(false);
@@ -155,11 +154,6 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
             </h2>
             <p className="text-sm text-content-secondary mt-1">
               Register your interest in AssetShift's proposed meter-asset lifecycle assurance platform.
-              {initialContext && (
-                <span className="block text-xs text-navy font-medium mt-1">
-                  Context: {initialContext}
-                </span>
-              )}
             </p>
           </div>
           <button
@@ -178,23 +172,20 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
               <div className="w-14 h-14 bg-emerald-50 text-status-success rounded-full flex items-center justify-center mx-auto border border-emerald-200">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-navy">Interest Successfully Recorded</h3>
+              <h3 className="text-xl font-bold text-navy">Request Successfully Submitted</h3>
               <div className="p-4 bg-slate-50 border border-border rounded-xl text-sm text-content-primary leading-relaxed text-left">
-                <p className="font-medium text-navy mb-1">Confirmation Details:</p>
+                <p className="font-semibold text-navy mb-1">Confirmation Details:</p>
                 <p className="text-content-secondary">
-                  Thank you for registering your pilot interest. Your details have been saved locally in this browser. No information has been transmitted to AssetShift.
+                  Thank you for registering your pilot interest. Your enquiry has been recorded. Our team will review your requirements and reach out to discuss pilot validation.
                 </p>
               </div>
-              <p className="text-xs text-content-secondary">
-                As this is a frontend demonstration, your registration is stored securely inside your browser's local storage and can be reviewed or cleared at any time.
-              </p>
               <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   type="button"
                   onClick={() => setSubmitSuccess(false)}
                   className="px-5 py-2.5 border border-border text-navy rounded-lg hover:bg-slate-50 font-medium text-sm transition-colors"
                 >
-                  Submit Another Enquiry
+                  Submit Another Request
                 </button>
                 <button
                   type="button"
@@ -211,7 +202,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
                 <div className="p-3.5 bg-red-50 border border-status-danger/30 rounded-xl flex items-start gap-3 text-sm text-status-danger">
                   <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold">Unable to Save Submission</p>
+                    <p className="font-semibold">Unable to Process Request</p>
                     <p className="text-xs mt-0.5">{systemError}</p>
                   </div>
                 </div>
@@ -265,7 +256,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    placeholder="Enter your phone number (e.g. +44 7700 900000)"
+                    placeholder="Enter your phone number"
                     className={`w-full pl-10 pr-4 py-2.5 bg-slate-50 border rounded-lg text-sm text-content-primary placeholder-content-secondary/60 focus:bg-white focus:outline-none focus:ring-2 transition-all ${
                       errors.phoneNumber
                         ? 'border-status-danger focus:ring-status-danger/30'
@@ -351,7 +342,7 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
                 <div className="flex items-start gap-3 p-3 bg-slate-50 border border-border rounded-xl">
                   <input
                     type="checkbox"
-                    id="demonstration-acknowledgement"
+                    id="pilot-programme-agreement"
                     checked={acknowledged}
                     onChange={e => {
                       setAcknowledged(e.target.checked);
@@ -365,8 +356,8 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
                     }}
                     className="mt-0.5 h-4 w-4 rounded border-border text-navy focus:ring-navy focus:ring-offset-0 cursor-pointer"
                   />
-                  <label htmlFor="demonstration-acknowledgement" className="text-xs text-content-secondary cursor-pointer leading-relaxed">
-                    I understand that this is a frontend demonstration and my details will be stored locally in this browser, rather than transmitted to AssetShift.
+                  <label htmlFor="pilot-programme-agreement" className="text-xs text-content-secondary cursor-pointer leading-relaxed">
+                    I confirm my interest in the AssetShift pilot programme and agree to be contacted regarding evaluation milestones and requirements.
                   </label>
                 </div>
                 {errors.acknowledgement && (
@@ -381,22 +372,18 @@ export const RequestPilotModal: React.FC<RequestPilotModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 px-6 bg-navy hover:bg-navy-light text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed group focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
+                  className="w-full py-3.5 px-6 bg-navy hover:bg-navy-light text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed group focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
                 >
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Saving Registration...</span>
+                      <span>Sending Pilot Request...</span>
                     </>
                   ) : (
-                    <span>Register Pilot Interest</span>
+                    <span>Send a Pilot Request</span>
                   )}
                 </button>
               </div>
-
-              <p className="text-[11px] text-center text-content-secondary/80">
-                Data is preserved locally across page reloads. No remote APIs or external servers are contacted.
-              </p>
             </form>
           )}
         </div>

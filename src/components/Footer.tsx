@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
   onRequestPilot: (context?: string) => void;
@@ -50,12 +50,12 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Column 1: Brand & Summary (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2.5 text-white">
-              <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center text-navy-dark">
-                <Zap className="w-5 h-5 fill-navy-dark" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white font-sans">
+            <div className="flex items-baseline gap-2 text-white">
+              <span className="text-2xl font-extrabold tracking-tight text-white font-sans">
                 Asset<span className="text-gold">Shift</span>
+              </span>
+              <span className="text-[10px] tracking-widest text-slate-400 uppercase font-medium">
+                Assurance
               </span>
             </div>
 

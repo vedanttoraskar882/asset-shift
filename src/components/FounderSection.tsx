@@ -42,7 +42,7 @@ export const FounderSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-navy/5 text-navy border border-navy/10">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-navy/5 text-navy border border-navy/10">
             Founder & Leadership
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
@@ -53,41 +53,41 @@ export const FounderSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Founder Card Container */}
-        <div className="mt-14 max-w-5xl mx-auto bg-white rounded-3xl border border-border shadow-md overflow-hidden">
+        {/* Founder Card Container (No photo / avatar box) */}
+        <div className="mt-14 max-w-5xl mx-auto bg-white rounded-3xl border border-border shadow-md hover:shadow-lg transition-shadow overflow-hidden">
           
+          {/* Subtle Accent Stripe */}
+          <div className="h-2 bg-gradient-to-r from-navy via-navy-light to-gold" />
+
           <div className="p-8 sm:p-10 lg:p-12">
             
-            {/* Top Bar: Initials Avatar + Name & Title */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-8 border-b border-border text-center sm:text-left">
-              
-              {/* Neutral Initials Placeholder OM */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-navy via-navy-light to-navy-dark text-gold font-bold text-3xl sm:text-4xl flex items-center justify-center shadow-lg border-2 border-gold/40 flex-shrink-0 tracking-wider">
-                OM
-              </div>
-
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gold/10 text-gold-dark border border-gold/20">
+            {/* Header: Name, Title & Credentials (No photo/avatar placeholder) */}
+            <div className="pb-8 border-b border-border">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold/10 text-gold-dark border border-gold/20">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  Founder
+                  Founder & Leadership
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-navy">
-                  Odinakachi Monago
-                </h3>
-                <p className="text-sm font-semibold text-content-secondary">
-                  Founder, AssetShift
-                </p>
-                <p className="text-xs text-slate-500 max-w-2xl pt-1">
-                  MSc in Finance and Data Analytics (University of Stirling, Merit) • Energy Industry Reconciliation & Revenue Assurance Specialist
-                </p>
+                <span className="text-xs font-medium text-slate-400">
+                  Energy Revenue Assurance & Data Analytics
+                </span>
               </div>
 
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                Odinakachi Maduabuchukwu
+              </h3>
+              <p className="text-base font-semibold text-content-secondary mt-1">
+                Founder, AssetShift
+              </p>
+              <p className="text-xs sm:text-sm text-slate-500 max-w-3xl pt-2 leading-relaxed">
+                MSc in Finance and Data Analytics (University of Stirling, Merit) • UK Energy Sector Reconciliation & Invoice Validation Specialist
+              </p>
             </div>
 
             {/* Biography */}
             <div className="py-8 border-b border-border space-y-4 text-sm text-content-secondary leading-relaxed">
               <p>
-                Odinakachi Monago is an operations and finance-focused analyst with professional experience in the UK energy sector, financial reconciliation, invoice validation, cost recovery and operational process improvement.
+                Odinakachi Maduabuchukwu is an operations and finance-focused analyst with professional experience in the UK energy sector, financial reconciliation, invoice validation, cost recovery and operational process improvement.
               </p>
               <p>
                 Her background in industry charge validation, half-hourly settlement reconciliation, meter tracking and revenue leakage investigations has informed the development of AssetShift.
@@ -110,17 +110,17 @@ export const FounderSection: React.FC = () => {
                     <span>Education</span>
                   </div>
                   <div className="space-y-4">
-                    <div className="border-l-2 border-gold pl-3">
+                    <div className="border-l-2 border-gold pl-3.5">
                       <h4 className="text-sm font-bold text-navy">MSc Finance and Data Analytics</h4>
-                      <p className="text-xs text-content-secondary">University of Stirling, United Kingdom</p>
-                      <span className="inline-block mt-1 px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 text-status-success rounded border border-emerald-200">
+                      <p className="text-xs text-content-secondary mt-0.5">University of Stirling, United Kingdom</p>
+                      <span className="inline-block mt-1.5 px-2.5 py-0.5 text-[10px] font-semibold bg-emerald-50 text-status-success rounded border border-emerald-200">
                         Grade: Merit
                       </span>
                     </div>
 
-                    <div className="border-l-2 border-slate-300 pl-3">
+                    <div className="border-l-2 border-slate-300 pl-3.5">
                       <h4 className="text-sm font-bold text-navy">BSc Biochemistry</h4>
-                      <p className="text-xs text-content-secondary">Federal University of Technology, Nigeria</p>
+                      <p className="text-xs text-content-secondary mt-0.5">Federal University of Technology, Nigeria</p>
                     </div>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export const FounderSection: React.FC = () => {
                     <Briefcase className="w-5 h-5 text-gold" />
                     <span>Professional Background</span>
                   </div>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-content-primary">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-content-primary">
                     {PROFESSIONAL_BACKGROUND.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0" />
@@ -172,7 +172,7 @@ export const FounderSection: React.FC = () => {
                     {TECHNICAL_SKILLS.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-white border border-border rounded-lg text-xs font-medium text-navy shadow-2xs hover:border-gold transition-colors"
+                        className="px-3 py-1.5 bg-white border border-border rounded-lg text-xs font-semibold text-navy shadow-2xs hover:border-gold hover:text-gold-dark transition-colors"
                       >
                         {skill}
                       </span>

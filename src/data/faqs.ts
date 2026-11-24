@@ -78,6 +78,6 @@ export const FAQS: FAQItem[] = [
   {
     id: 'faq-15',
     question: 'How can my organisation participate in a pilot?',
-    answer: 'Organisations interested in the proposed platform can use the Request a Pilot form to register their interest in potential development and pilot opportunities. For this frontend demonstration, form details are stored locally in the browser and are not transmitted to AssetShift.'
+    answer: 'Organisations interested in the proposed platform can use the Request a Pilot form to register their interest in potential development and pilot participation opportunities.'
   }
 ];

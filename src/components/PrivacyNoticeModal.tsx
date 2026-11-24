@@ -63,10 +63,10 @@ export const PrivacyNoticeModal: React.FC<PrivacyNoticeModalProps> = ({ isOpen, 
         <div className="px-6 sm:px-8 py-6 space-y-5 text-sm text-content-secondary leading-relaxed max-h-[70vh] overflow-y-auto">
           <div className="p-4 bg-slate-50 border border-border rounded-xl">
             <h3 className="text-navy font-semibold flex items-center gap-2 mb-1">
-              <Database className="w-4 h-4 text-gold" /> Frontend Demonstration & Local Storage Only
+              <Database className="w-4 h-4 text-gold" /> Pilot Request Data Handling
             </h3>
             <p>
-              This website is an interactive demonstration and market validation presentation for AssetShift. All information entered into the "Request a Pilot" form is stored strictly within your current browser's <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono text-navy">localStorage</code> mechanism under the key <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono text-navy">assetshift_pilot_submissions</code>.
+              Information submitted via the "Request a Pilot" form is handled for prospective pilot intake and recorded within your browser session under <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono text-navy">assetshift_pilot_submissions</code>.
             </p>
           </div>
 
